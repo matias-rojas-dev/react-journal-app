@@ -1,0 +1,14 @@
+.nothing__main-content{
+    align-items: center;
+    color: white;
+    background-color: $primary;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+
+    p{
+        text-align: center;
+    }
+
+}
