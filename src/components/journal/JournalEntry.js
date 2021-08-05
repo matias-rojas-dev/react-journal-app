@@ -1,8 +1,22 @@
 import React from 'react';
+import moment from 'moment';
+import { activeNote } from '../../actions/notes';
+import { useDispatch } from 'react-redux';
 
-export const JournalEntry = () => {
+export const JournalEntry = ({ id, date, title, body, url }) => {
+    const noteDate = moment(date);
+    const noteDateDay = noteDate.format('D');
+    const noteDateMonth = noteDate.format('M');
+    const noteDateYear = noteDate.format('YYYY');
+
+    const dispatch = useDispatch();
+
+    const handleEntryClick = () => {
+        dispatch(activeNote(id, { date, title, body, url }))
+    }
+
     return (
-        <div className='journal__entry pointer hover'>
+        <div onClick={handleEntryClick} className='journal__entry pointer hover'>
             <div
                 className='journal__entry-picture'
                 style={{
@@ -12,13 +26,12 @@ export const JournalEntry = () => {
             ></div>
 
             <div className='journal__entry-body'>
-                <p className='journal__entry-title'>Un nuevo día</p>
-                <p className='journal__entry-content'>Hola mundo</p>
+                <p className='journal__entry-title'>{title}</p>
+                <p className='journal__entry-content'>{body}</p>
             </div>
 
             <div className='journal__entry-date-box'>
-                <span>Monday</span>
-                <h4>28</h4>
+                <h4>{(`${noteDateDay}/${noteDateMonth}/${noteDateYear}`)}</h4>
             </div>
 
         </div>

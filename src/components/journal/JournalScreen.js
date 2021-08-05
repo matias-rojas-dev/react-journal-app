@@ -14,7 +14,7 @@ export const JournalScreen = () => {
 
             <main>
                 {
-                    active
+                    (active)
                         ? (<NoteScreen />
                         )
                         : (<NothingSelected />)
