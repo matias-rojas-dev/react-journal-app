@@ -21,7 +21,7 @@ export const Sidebar = () => {
 
     return (
         <aside className='journal__sidebar'>
-            <div className='journal__sidebar-navbar'>
+            <div className='journal__sidebar-navbar animate__animated animate__bounceInLeft animate__slower'>
                 <h3 className='mt-5'>
                     <i className='far fa-moon' />
                     <span>{name}</span>
@@ -33,8 +33,8 @@ export const Sidebar = () => {
             </div>
 
             <div className='journal__new-entry' onClick={handleAddNew}>
-                <i className='far fa-calendar-plus fa-5x' />
-                <p className='mt-5'>New Entry</p>
+                <i className='far fa-calendar-plus fa-5x animate__animated animate__bounceInLeft animate__slow' />
+                <p className='mt-5 animate__animated animate__bounceInLeft animate__slow'>New Entry</p>
             </div>
 
             <JournalEntries />

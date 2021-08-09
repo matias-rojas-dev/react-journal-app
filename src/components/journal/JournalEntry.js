@@ -16,12 +16,12 @@ export const JournalEntry = ({ id, date, title, body, url }) => {
     }
 
     return (
-        <div onClick={handleEntryClick} className='journal__entry pointer hover'>
+        <div onClick={handleEntryClick} className='journal__entry pointer hover animate__animated animate__fadeInDown'>
             <div
                 className='journal__entry-picture'
                 style={{
                     backgroundSize: 'cover',
-                    backgroundImage: 'url(https://www.w3schools.com/w3css/img_lights.jpg)'
+                    backgroundImage: `url(${url})`
                 }}
             ></div>
 

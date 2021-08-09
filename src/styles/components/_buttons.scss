@@ -31,7 +31,13 @@
     
 }
 
+.btn-danger {
+    background:red;
 
+    &:hover{
+        background: rgb(206, 1, 1);
+    }
+}
 
 .google-btn {
     cursor: pointer;
